@@ -1,0 +1,26 @@
+api:
+  replicaCount: 2
+  image:
+    repository: jasmine150720/vdt2024-fastapi
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+
+database:
+  replicaCount: 1
+  image:
+    repository: mongo
+    tag: "5.0"
+    pullPolicy: IfNotPresent
+
+mongodb:
+  username: YWRtaW4=
+  password: YWRtaW4=
+  database: admin
+
+persistence:
+  enabled: true
+  storageClassName: standard
+  accessMode: ReadWriteOnce
+  size: 1Gi
