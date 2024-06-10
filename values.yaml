@@ -4,8 +4,9 @@ api:
     repository: jasmine150720/vdt2024-fastapi
     pullPolicy: IfNotPresent
   service:
-    type: ClusterIP
+    type: NodePort
     port: 80
+    nodePort: 30100
 
 database:
   replicaCount: 1
