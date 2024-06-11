@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-docker-repo/fastapi-app
+  repository: jasmine150720/vdt2024-fastapi
   pullPolicy: IfNotPresent
   tag: "latest"
 
