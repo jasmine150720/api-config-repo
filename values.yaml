@@ -10,9 +10,6 @@ service:
   port: 80
   nodePort: 30007  # NodePort you want to expose
 
-ingress:
-  enabled: false
-
 resources: {}
   
 nodeSelector: {}
