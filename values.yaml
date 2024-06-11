@@ -11,5 +11,4 @@ api:
 mongodb:
   username: YWRtaW4=
   password: YWRtaW4=
-  database: mongo
 
