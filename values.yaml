@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-dockerhub-username/your-app
+  repository: jasmine150720/vdt2024-react
   tag: latest
   pullPolicy: IfNotPresent
 
