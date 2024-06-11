@@ -1,31 +1,29 @@
 replicaCount: 1
 
 image:
-  repository: jasmine150720/vdt2024-fastapi
+  repository: your-dockerhub-username/your-app
+  tag: latest
   pullPolicy: IfNotPresent
-  tag: "latest"
 
 service:
   type: NodePort
   port: 80
-  nodePort: 30007  # NodePort you want to expose
-
-resources: {}
-  
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
+  nodePort: 30007  
 
 mongodb:
-  enabled: true
-  image: mongo:5.5
+  image: mongo:5.0
   port: 27017
-  host: mongo
 
-env:
-  - name: MONGODB_HOST
-    value: mongo
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - host: your-app.example.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
 
 
