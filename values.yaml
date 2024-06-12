@@ -1,7 +1,7 @@
 api:
   replicaCount: 1
   image:
-    repository: 
+    repository: jasmine150720/vdt2024-fastapi
     tag: latest
     pullPolicy: IfNotPresent
   service:
