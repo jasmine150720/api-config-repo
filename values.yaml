@@ -1,31 +1,24 @@
 replicaCount: 1
 
-image:
-  repository: jasmine150720/vdt2024-fastapi
-  tag: latest
-  pullPolicy: IfNotPresent
+fastapi:
+  image:
+    repository: jasmine150720/vdt2024-fastapi
+  service:
+    type: NodePort
+    port: 80
+    nodePort: 31049
 
-service:
-  type: NodePort
-  port: 80
-  nodePort: 30001  
-
-mongodb:
-  image: mongo:5.0
-  port: 27017
-  database: vdt2024
-
-resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
-
-nodeSelector: {}
-tolerations: []
-affinity: {}
-
-
-
+mongo:
+  image:
+    repository: mongo
+    tag: 5.0
+  service:
+    type: NodePort
+    port: 27017
+    nodePort: 31048
+  persistence:
+    storage: 500Mi
+    storageClassName: manual
+    accessModes:
+      - ReadWriteOnce
+    hostPath: /mnt/data
